@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Rouge+Script');
+
+@keyframes animatedBackground {
+	from { background-position: 100% 0; }
+	to { background-position: 0 0 ; }
+}
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+
+body{
+    background-color: black;
+    color:white;
+    /*background-color: #6dd001; */
+
+    max-height: 1000px;
+    position: relative;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.3em;
+    border: 0;
+    margin: 0;
+    /*
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 2000px;
+    background-image: url(img/background-welcome.png);
+    
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-attachment:fixed ;   
+    animation: animatedBackground 40s linear infinite;
+    */
+}
+.nome{
+    font-family: 'Rouge Script', cursive;
+    text-transform: initial !important;
+}
+footer, header{
+
+    width: 100%;
+    background-repeat: repeat-x;
+}
+header{
+    min-height: 1250px;
+    background-image: url(img/cortina.png);
+}
+footer{
+    min-height: 103px;
+    background-image: url(img/palco.png);
+    bottom: 0;
+    position: fixed;
+
+}
+#welcome{
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 260px;
+}
+.chamada .mensagem, .pai, .mae,.player,.nome{
+    display: block;
+}
+.pais{
+    width: 50%;
+    float: left;
+}
+.mais, p.noivo, p.noiva{
+    width: 30%;
+    float: left;
+
+}
+.mensagem.joystick{
+    clear: both;
+}
