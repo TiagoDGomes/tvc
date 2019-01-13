@@ -22,7 +22,7 @@ body{
     color:white;
     /*background-color: #6dd001; */
 
-    max-height: 1000px;
+    max-height: 1200px;
     position: relative;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.3em;
@@ -49,7 +49,7 @@ footer, header{
     background-repeat: repeat-x;
 }
 header{
-    min-height: 1250px;
+    min-height: 1750px;
     background-image: url(img/cortina.png);
 }
 footer{
@@ -63,9 +63,13 @@ footer{
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 260px;
+    max-width: 960px;
+    margin:0 auto;
 }
+
 .chamada .mensagem, .pai, .mae,.player,.nome{
     display: block;
+    clear: both;
 }
 .pais{
     width: 50%;
@@ -78,4 +82,13 @@ footer{
 }
 .mensagem.joystick{
     clear: both;
+}
+#items img{
+    height: 150px;
+    position: fixed;
+    bottom: 103px;
+    z-index: -2;
+}
+#items .peach{
+    right: 0;
 }
