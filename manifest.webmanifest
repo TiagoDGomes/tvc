@@ -1,0 +1,15 @@
+{
+    "background_color": "purple",
+    "description": "Casamento de Vanessa e Tiago.",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "img/SuperMushroom.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "Casamento de Tiago e Vanessa",
+    "short_name": "Tiago e Vanessa",
+    "start_url": "/"
+  }

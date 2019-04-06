@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Rouge+Script');
+
+
+body{
+    padding: 1em;    
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(img/caixinha_back.png);
+    text-shadow: 1px 2px silver;
+    color: black;
+}
+section.comodo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 200px;
+    margin: 0 auto;
+    text-align: center;
+}
+section.comodo a{
+    display: block;
+    padding-top: 80px;
+    height: 120px;
+    color: white;
+    text-decoration: none;
+}

@@ -18,16 +18,18 @@
   }
 
 body{
-    background-color: black;
-    color:white;
+    font-size: 1.3em;
+    background-image: url(img/caixinha_back.png);
+    text-shadow: 1px 2px silver;
+    color: black;
     /*background-color: #6dd001; */
+    text-transform: uppercase;
 
     max-height: 1200px;
     position: relative;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.3em;
     border: 0;
-    margin: 0;
+    margin:0;
+    line-height: 1.5em;
     /*
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     min-height: 2000px;
@@ -39,6 +41,18 @@ body{
     animation: animatedBackground 40s linear infinite;
     */
 }
+a {
+    color: orange;
+    text-decoration: none;
+}
+#menu{
+    padding-bottom: 260px;
+    text-align: center;
+}
+
+#menu ul{
+    list-style-type: none;
+}
 .nome{
     font-family: 'Rouge Script', cursive;
     text-transform: initial !important;
@@ -49,8 +63,9 @@ footer, header{
     background-repeat: repeat-x;
 }
 header{
-    min-height: 1750px;
+    min-height: 1460px;
     background-image: url(img/cortina.png);
+    z-index: auto;
 }
 footer{
     min-height: 103px;
@@ -59,10 +74,8 @@ footer{
     position: fixed;
 
 }
-#welcome{
-    text-transform: uppercase;
+#welcome, #menu{
     text-align: center;
-    padding-bottom: 260px;
     max-width: 960px;
     margin:0 auto;
 }
@@ -87,8 +100,68 @@ footer{
     height: 150px;
     position: fixed;
     bottom: 103px;
-    z-index: -2;
 }
 #items .peach{
     right: 0;
+}
+header{
+}
+#items img {
+    z-index: 2;
+
+}
+#welcome{
+    z-index: 1;
+    padding-bottom: 10em;
+}
+.start{
+    border: 0;
+    color: white;
+    background-color: red;
+    padding: 3px;
+    text-shadow: 0;
+}
+.orientacoes{
+    position: fixed;
+    right: 4px;
+    top: 4px;
+    font-size: .7em;
+}
+@media (max-width: 600px) {    
+    body{
+        font-size: .9em;
+    }
+    #welcome{        
+        margin: 1em;
+    }
+}
+@media (max-width: 1300px) { 
+    #welcome, #menu{
+        /*padding-left: 6em;
+        padding-right: 6em;*/
+        
+    }
+    
+}
+.nome{
+    font-size: 1.7em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+@media (max-width: 512px) {   
+    .celular {
+        display: initial;
+    }
+    .pc{
+        display: none;
+    }
+}
+
+@media (min-width: 512px) {   
+    .celular {
+        display: none;
+    }
+    .pc{
+        display: initial;
+    }
 }

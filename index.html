@@ -7,10 +7,12 @@
     <title>M</title>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?2" />
     <script src="main.js"></script>
+    <link rel="manifest" href="manifest.webmanifest">
     <style>
-        
+
     </style>
 </head>
 
@@ -19,6 +21,11 @@
         <header>
 
         </header>
+
+        <section id="items">
+            <img src="img/w_mario.gif" alt="" class="mario">
+            <img src="img/w_peach.gif" alt="" class="peach">
+        </section>
         <section id="welcome">
             <p class="chamada">
                 <span class="mensagem">Os produtores</span>
@@ -43,24 +50,55 @@
             </p>
             <p class="mensagem joystick">
                 Eles vão juntar os joysticks e jogar
-                o próximo nivel juntos
+                o próximo nível juntos
             </p>
             <p class="mensagem datalocal">
-                O botão <i class="start"> start</i> será pressionado no dia 31
+                O botão <span class="start"> start</span> será pressionado no dia 31
                 de agosto de 2019, às 17h00 na Igreja
                 Matriz São Geraldo Magela, Av. Alvarenga Peixoto, Centro, Inconfidentes - MG
             </p>
         </section>
-
-        <section id="items">
-            <img src="img/w_mario.gif" alt="" class="mario">
-            <img src="img/w_peach.gif" alt="" class="peach">
+        <section id="menu">
+            <ul class="celular">
+                <li><a href="lista.html">Toque aqui para escolher um presente</a></li>
+            </ul>
+            <ul class="pc">
+                <li><a href="lista.html">Clique aqui para escolher um presente</a></li>
+            </ul>
+            
         </section>
         <footer>
-            
+
         </footer>
+        <div id="role_cortina" class="orientacoes" style="display: none">
+            Role a cortina
+        </div>
+        <script> 
+            var role_cortina = document.getElementById('role_cortina');
+            function amap(x, in_min, in_max, out_min, out_max) {
+                return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+            }           
+            /*window.addEventListener('scroll', function (e) {
+                console.log(window.scrollX, window.scrollY, document.body.scrollHeight, document.body.scrollWidth);
+                if (window.scrollY  > 700){
+                    role_cortina.style.display = 'none';
+                }
+                var b = amap(window.scrollY, 0, document.body.scrollHeight, 0, 255);
+                var g = amap(window.scrollY, 0, document.body.scrollHeight, 0, 150);
+                var fundo = document.getElementById('main');
+                fundo.style.backgroundColor = "rgb(0, " + g + ", " + b + ")"
+                //}
+            });*/
+            setInterval(function(){                
+                if (window.scrollY < 700){                    
+                    role_cortina.style.display = 'initial';
+                } else {
+                    role_cortina.style.display = 'none';
+                }
+            },3000)
+        </script>
     </div>
-    
+
 </body>
 
 </html>
