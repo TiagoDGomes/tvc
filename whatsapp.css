@@ -1,0 +1,57 @@
+#main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 75px;
+}
+.titulo{
+    background-color: #075e55;
+    color: white;
+    padding: 12px 0 8px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 40px;    
+    line-height: 1em;
+    max-width: 420px;
+}
+.conversa {
+    background-color: white;
+    border-radius: 4px 4px 4px;
+    width: 87%;
+    padding: 8px 8px 8px 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;    
+    border-bottom: 2px solid silver;
+    border-right: 2px solid silver;
+    
+}
+.conversa h2{
+    font-size: 1em;
+}
+.titulo .imagem,
+.titulo .nome,
+.titulo .voltar{
+    display: inline-block;
+    float: left;
+}
+.titulo .voltar{
+    font-weight: bold;
+    font-size: 2em;
+    background-image: url(img/voltar.png);
+    cursor: pointer;
+}
+.titulo .voltar,
+.titulo .imagem{
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.imagem.noivos{
+    background-image: url(img/noivos.jpg);
+}
+.titulo .status{
+    font-size: .7em;
+}

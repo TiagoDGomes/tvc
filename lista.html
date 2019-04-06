@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+<!-- 
+    Este é um site para o meu casamento.
+    Tem conteúdo feito por outras pessoas, eu sei, mas
+    esse site foi feito para um público restrito e
+    não para ser usado para um povo
+    que quer criar mimimi de direitos autorais.
+    Brigadu, di nada.
+-->
 
 <head>
     <meta charset="utf-8" />
@@ -8,22 +16,15 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="lista.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="lista.css?2" />
     <link rel="stylesheet" type="text/css" media="screen" href="cloud.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="emoji.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="whatsapp.css" />
     <link rel="manifest" href="manifest.webmanifest">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
     <style>
-        h1,
-        .chamada {
-            text-align: center;
-        }
-
-        #main {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
         section.cozinha {
             background-image: url(img/cozinha.jpg);
         }
@@ -32,14 +33,22 @@
             background-image: url(img/sala.jpg);
         }
 
-        .whatsapp .conversa {
-            display: none;
+        section.quarto {
+            background-image: url(img/quarto.jpg);
+        }
+
+        section.escritorio {
+            background-image: url(img/escritorio.jpg);
+        }
+
+        section.closet {
+            background-image: url(img/closet.jpg);
         }
     </style>
 </head>
 
 <body>
-    <div id="main" class="whatsapp">
+    <div id="main">
         <div id="background-wrap">
             <div class="x1">
                 <div class="cloud"></div>
@@ -62,17 +71,15 @@
             </div>
         </div>
 
-        <div style="position: relative;">
-            <div class="titulo">
-                <span class="imagem noivos">
+        <div class="titulo"><span class="voltar" onclick="history.go(-1)"></span>
+            <span class="imagem noivos">
 
-                </span>
-                <span class="nome">
-                    <strong>Casamento Vanessa e Tiago </strong>
-                    <br>
-                    <span class="status">vistos juntos agora e para sempre</span>
-                </span>
-            </div>
+            </span>
+            <span class="nome">
+                <strong>Casamento Vanessa e Tiago </strong>
+                <br>
+                <span class="status">vistos juntos agora e para sempre</span>
+            </span>
         </div>
         <section class="conversa">
             Nossa casa ainda é tão vazia...<br>
@@ -81,39 +88,47 @@
         <section class="conversa">
             <h2>Cozinha</h2>
             <section class="comodo cozinha">
-                <a href="cozinha.html">Ver presentes de cozinha</a>
+                <a href="lista_escolha.html?local=cozinha">Ver presentes para cozinha</a>
             </section>
         </section>
         <section class="conversa">
             <h2>Sala</h2>
             <section class="comodo sala">
-                <a href="sala.html">Ver presentes de sala</a>
+                <a href="lista_escolha.html?local=sala">Ver presentes para sala</a>
             </section>
         </section>
         <section class="conversa">
             <h2>Quarto</h2>
             <section class="comodo quarto">
-                <a href="quarto.html">Ver presentes de quarto</a>
+                <a href="lista_escolha.html?local=quarto">Ver presentes para o quarto</a>
             </section>
         </section>
         <section class="conversa">
             <h2>Closet</h2>
             <section class="comodo closet">
-                <a href="quarto.html">Ver presentes de closet</a>
+                <a href="lista_escolha.html?local=closet">Ver presentes para closet</a>
             </section>
         </section>
         <section class="conversa">
             <h2>Escritório</h2>
             <section class="comodo escritorio">
-                <a href="quarto.html">Ver presentes de escritorio</a>
+                <a href="lista_escolha.html?local=escritorio">Ver presentes para escritorio</a>
+            </section>
+        </section>
+        <section class="conversa">
+            <h2>Banheiro</h2>
+            <section class="comodo banheiro">
+                <a href="lista_escolha.html?local=banheiro">Ver presentes para o banheiro</a>
             </section>
         </section>
 
 
 
     </div>
-    <script src="whatsapp.js"></script>
-
+    <script src="whatsapp.js?1"></script>
+    <script>
+        pipocar_conversa('lista');
+    </script>
 </body>
 
 </html>

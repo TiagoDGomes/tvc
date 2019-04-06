@@ -76,27 +76,27 @@
         <script>
             var role_cortina = document.getElementById('role_cortina');
 
-            function amap(x, in_min, in_max, out_min, out_max) {
-                return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-            }
-            /*window.addEventListener('scroll', function (e) {
+            //function amap(x, in_min, in_max, out_min, out_max) {
+            //    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+            //}
+            window.addEventListener('scroll', function (e) {
                 console.log(window.scrollX, window.scrollY, document.body.scrollHeight, document.body.scrollWidth);
                 if (window.scrollY  > 700){
                     role_cortina.style.display = 'none';
                 }
-                var b = amap(window.scrollY, 0, document.body.scrollHeight, 0, 255);
-                var g = amap(window.scrollY, 0, document.body.scrollHeight, 0, 150);
-                var fundo = document.getElementById('main');
-                fundo.style.backgroundColor = "rgb(0, " + g + ", " + b + ")"
+                //var b = amap(window.scrollY, 0, document.body.scrollHeight, 0, 255);
+                //var g = amap(window.scrollY, 0, document.body.scrollHeight, 0, 150);
+                //var fundo = document.getElementById('main');
+                //fundo.style.backgroundColor = "rgb(0, " + g + ", " + b + ")"
                 //}
-            });*/
+            });
             setInterval(function () {
                 if (window.scrollY < 700) {
                     role_cortina.style.display = 'initial';
                 } else {
                     role_cortina.style.display = 'none';
                 }
-            }, 3000);
+            }, 1000);
         </script>
     </div>
 </body>

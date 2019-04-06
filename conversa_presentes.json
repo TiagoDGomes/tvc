@@ -1,0 +1,56 @@
+{
+    "cozinha" : {
+        "mensagem_inicial": "Ah, que legal, a gente vai fazer um monte de coisas gostosas para comer, mas para isso precisamos de itens de cozinha, né?! ",
+        "coisas": [
+            {
+                "nome": "Micro-ondas",
+                "imagem": "img/micro-ondas.jpg",
+                "palavra-chave": "micro-ondas brastemp 32 litros"
+            },
+            {
+                "nome": "Forno elétrico",
+                "imagem": "img/forno-eletrico.jpg",
+                "palavra-chave": "forno elétrico"
+            }            
+        ],        
+        "mensagem_final": ""
+    },
+    "sala" : {
+        "mensagem_inicial": "Para receber as visitas, vamos precisar de itens de sala, não é mesmo?",
+        "coisas": [
+            {
+                "nome": "",
+                "imagem": "http://",
+                "palavra-chave": "forno elétrico"
+            }
+        ],
+        
+        "mensagem_final": ""
+    },
+    "quarto" : {
+        "mensagem_inicial": "",
+        "coisas": [
+            {
+                "nome": "",
+                "imagem": "http://",
+                "sugestoes":[
+                    "http://",
+                    "http://"
+                ]
+            }
+        ],
+        
+        "mensagem_final": ""
+    },
+    "banheiro" : {
+
+    },
+    "closet" : {
+
+    },
+    "escritorio" : {
+
+    }
+    
+    
+}
