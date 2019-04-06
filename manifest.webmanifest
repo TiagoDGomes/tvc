@@ -1,7 +1,7 @@
 {
     "background_color": "purple",
     "description": "Casamento de Vanessa e Tiago.",
-    "display": "fullscreen",
+    "display": "standalone",
     "icons": [
       {
         "src": "img/SuperMushroom.png",
@@ -11,5 +11,5 @@
     ],
     "name": "Casamento de Tiago e Vanessa",
     "short_name": "Tiago e Vanessa",
-    "start_url": "/tvc"
+    "start_url": "https://tiagodgomes.github.io/tvc/index.html"
   }

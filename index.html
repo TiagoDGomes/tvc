@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css?2" />
-    <script src="main.js"></script>
+
     <link rel="manifest" href="manifest.webmanifest">
     <style>
 
@@ -65,7 +65,7 @@
             <ul class="pc">
                 <li><a href="lista.html">Clique aqui para escolher um presente</a></li>
             </ul>
-            
+
         </section>
         <footer>
 
@@ -73,11 +73,12 @@
         <div id="role_cortina" class="orientacoes" style="display: none">
             Role a cortina
         </div>
-        <script> 
+        <script>
             var role_cortina = document.getElementById('role_cortina');
+
             function amap(x, in_min, in_max, out_min, out_max) {
                 return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-            }           
+            }
             /*window.addEventListener('scroll', function (e) {
                 console.log(window.scrollX, window.scrollY, document.body.scrollHeight, document.body.scrollWidth);
                 if (window.scrollY  > 700){
@@ -89,16 +90,25 @@
                 fundo.style.backgroundColor = "rgb(0, " + g + ", " + b + ")"
                 //}
             });*/
-            setInterval(function(){                
-                if (window.scrollY < 700){                    
+            setInterval(function () {
+                if (window.scrollY < 700) {
                     role_cortina.style.display = 'initial';
                 } else {
                     role_cortina.style.display = 'none';
                 }
-            },3000)
+            }, 3000);
         </script>
     </div>
-
 </body>
-
+<script>
+    if ('serviceWorker' in navigator) {
+        console.log("Will the service worker register?");
+        navigator.serviceWorker.register('service-worker.js')
+            .then(function (reg) {
+                console.log("Yes, it did.");
+            }).catch(function (err) {
+                console.log("No it didn't. This happened:", err)
+            });
+    }
+</script>
 </html>

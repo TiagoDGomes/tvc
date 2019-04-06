@@ -1,0 +1,14 @@
+    .emoji.suor {
+        background-position: 20px -120px;
+    }
+
+    .emoji {
+
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+    }
+
+    .emoji.wa1 {
+        background-image: url(img/emoji1.webp)
+    }

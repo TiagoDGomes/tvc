@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" media="screen" href="lista.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="cloud.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="emoji.css" />
     <script src="main.js"></script>
     <link rel="manifest" href="manifest.webmanifest">
     <style>
@@ -21,33 +23,107 @@
             max-width: 960px;
             margin: 0 auto;
         }
-        section.cozinha{
+
+        section.cozinha {
             background-image: url(img/cozinha.jpg);
         }
-        section.sala{
+
+        section.sala {
             background-image: url(img/sala.jpg);
+        }
+
+        .whatsapp .conversa {
+            display: none;
         }
     </style>
 </head>
 
 <body>
-    <div id="main">
-        <h1>Presentes</h1>
-        <p class="chamada">Ajudem Tiago e Vanessa a montarem a casinha</p>
-        <section class="showcase">
+    <div id="main" class="whatsapp">
+        <div id="background-wrap">
+            <div class="x1">
+                <div class="cloud"></div>
+            </div>
+
+            <div class="x2">
+                <div class="cloud"></div>
+            </div>
+
+            <div class="x3">
+                <div class="cloud"></div>
+            </div>
+
+            <div class="x4">
+                <div class="cloud"></div>
+            </div>
+
+            <div class="x5">
+                <div class="cloud"></div>
+            </div>
+        </div>
+
+        <div style="position: relative;">
+            <div class="titulo">
+                <span class="imagem noivos">
+
+                </span>
+                <span class="nome">
+                    <strong>Casamento Vanessa e Tiago </strong>
+                    <br>
+                    <span class="status">vistos juntos agora e para sempre</span>
+                </span>
+            </div>
+        </div>
+        <section class="conversa">
+            Nossa casa ainda é tão vazia...<br>
+            Você pode nos ajudar? <i class="emoji wa1 suor"> </i>
+        </section>
+        <section class="conversa">
             <h2>Cozinha</h2>
             <section class="comodo cozinha">
                 <a href="cozinha.html">Ver presentes de cozinha</a>
             </section>
         </section>
-        <section class="showcase">
+        <section class="conversa">
             <h2>Sala</h2>
             <section class="comodo sala">
                 <a href="sala.html">Ver presentes de sala</a>
             </section>
         </section>
+        <section class="conversa">
+            <h2>Quarto</h2>
+            <section class="comodo quarto">
+                <a href="quarto.html">Ver presentes de quarto</a>
+            </section>
+        </section>
+        <section class="conversa">
+            <h2>Closet</h2>
+            <section class="comodo closet">
+                <a href="quarto.html">Ver presentes de closet</a>
+            </section>
+        </section>
+        <section class="conversa">
+            <h2>Escritório</h2>
+            <section class="comodo escritorio">
+                <a href="quarto.html">Ver presentes de escritorio</a>
+            </section>
+        </section>
+
+
 
     </div>
+    <script>
+        var conversa = document.getElementsByClassName('conversa');
+        var conversa_i = 0;
+
+        setInterval(function () {
+            if (conversa_i < conversa.length) {
+                conversa[conversa_i].style.display = 'inherit';
+                conversa_i++;
+            }
+        }, 1000);
+    </script>
+
 </body>
 
 </html>

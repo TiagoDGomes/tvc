@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Rouge+Script');
 
 
-body{
-    padding: 1em;    
-    text-transform: uppercase;
+body {
+    margin: 0 auto;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(img/caixinha_back.png);
-    text-shadow: 1px 2px silver;
-    color: black;
+    /*background-image: url(img/caixinha_back.png);*/
+	background: #59bcea;
+    
+    height: 100vh;
+    max-width: 430px;
 }
-section.comodo{
+
+section.comodo {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -17,10 +20,58 @@ section.comodo{
     margin: 0 auto;
     text-align: center;
 }
-section.comodo a{
+
+section.comodo a {
     display: block;
     padding-top: 80px;
     height: 120px;
     color: white;
     text-decoration: none;
+}
+.whatsapp{
+    padding-top: 75px;
+}
+.whatsapp .titulo{
+    background-color: #075e55;
+    color: white;
+    padding: 12px 0 8px 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 40px;    
+    line-height: 1em;
+    max-width: 420px;
+}
+.whatsapp .conversa {
+    background-color: white;
+    border-radius: 4px 4px 4px;
+    width: 87%;
+    padding: 8px 8px 8px 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;    
+    border-bottom: 2px solid silver;
+    border-right: 2px solid silver;
+    
+}
+.whatsapp .conversa h2{
+    font-size: 1em;
+}
+.whatsapp .titulo .imagem,
+.whatsapp .titulo .nome{
+    display: inline-block;
+    float: left;
+}
+.whatsapp .titulo .imagem{
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.whatsapp .imagem.noivos{
+    background-image: url(img/noivos.jpg);
+}
+.whatsapp .titulo .status{
+    font-size: .7em;
 }
