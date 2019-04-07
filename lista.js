@@ -42,11 +42,18 @@ function atualiza_lista_geral() {
                 container.appendChild(titulo);
                 var link = document.createElement('a');
                 link.href = "lista_escolhido.html?escolha=" + lista[local]['coisas'][i]['nome'];
-
+                link.className = 'imagem';
                 var imagem = document.createElement('img');
-                imagem.src = lista[local]['coisas'][i]['imagem'];
+                if (lista[local]['coisas'][i]['imagem'] != '' && lista[local]['coisas'][i]['imagem'] != undefined){
+                    imagem.src = lista[local]['coisas'][i]['imagem'];
+                } else {
+                    imagem.src = 'img/presente.png';
+                    imagem.style.width = '120px';
+                }
                 imagem.alt = lista[local]['coisas'][i]['palavra-chave'];
                 link.appendChild(imagem);
+
+
                 container.appendChild(link);
                 escrever_mensagem_complexa(container);
                 
@@ -63,7 +70,7 @@ function atualiza_lista_geral() {
             escrever_mensagem(mensagem_final);
         }
         
-        pipocar_conversa(local,true);
+        pipocar_conversa(local);
     }
 }
 

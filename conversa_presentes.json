@@ -315,6 +315,11 @@
                 "nome": "churrasqueira",
                 "imagem": "",
                 "palavra-chave": ""
+            },
+            {
+                "nome": "relógio",
+                "imagem": "",
+                "palavra-chave": ""
             }
 
         ],
@@ -463,6 +468,16 @@
                 "nome": "chuveiro",
                 "imagem": "",
                 "palavra-chave": ""
+            },
+            {
+                "nome": "espelho grande",
+                "imagem": "",
+                "palavra-chave": ""
+            },
+            {
+                "nome": "espelho pequeno",
+                "imagem": "",
+                "palavra-chave": ""
             }
 
         ],
@@ -523,6 +538,11 @@
             },
             {
                 "nome": "ferro elétrico",
+                "imagem": "",
+                "palavra-chave": ""
+            },
+            {
+                "nome": "aspirador de pó",
                 "imagem": "",
                 "palavra-chave": ""
             },
