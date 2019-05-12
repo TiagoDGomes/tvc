@@ -1,0 +1,10 @@
+{
+    "micro-ondas": {
+        "cliques": 1,
+        "interessados": 1
+    },
+    "forno elétrico": {
+        "cliques": 3,
+        "interessados": 0
+    }
+}

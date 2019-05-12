@@ -41,4 +41,16 @@ section.comodo a {
 
 .conversa .produto img {
     max-width: 95%;
+    height: 85px;
+}
+.feedback{
+    color: #afafaf;
+    font-size: 0.7em;
+    line-height: 2em;
+}
+.feedback img {
+    margin-right: 6px;
+    width: 16px !important;
+    height: 16px !important;
+    float:left;
 }

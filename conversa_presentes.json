@@ -2,12 +2,7 @@
     "cozinha": {
         "mensagem_inicial": "Ah, que legal, a gente vai fazer um monte de coisas gostosas para comer, mas para isso precisamos de itens de cozinha, né?! ",
         "coisas": [{
-                "nome": "Micro-ondas",
-                "imagem": "img/micro-ondas.jpg",
-                "palavra-chave": "micro-ondas brastemp 32 litros"
-            },
-            {
-                "nome": "Forno elétrico",
+                "nome": "forno elétrico",
                 "imagem": "img/forno-eletrico.jpg",
                 "palavra-chave": "forno elétrico"
             },
@@ -17,12 +12,18 @@
                 "palavra-chave": ""
             },
             {
-                "nome": "Pratos rasos",
+                "nome": "pratos rasos",
                 "imagem": "",
                 "palavra-chave": ""
             },
             {
-                "nome": "Pratos fundos",
+                "nome": "micro-ondas",
+                "nome-original": "mo",
+                "imagem": "img/micro-ondas.jpg",
+                "palavra-chave": "micro-ondas brastemp 32 litros"
+            },
+            {
+                "nome": "pratos fundos",
                 "imagem": "",
                 "palavra-chave": ""
             },
@@ -328,7 +329,7 @@
     "sala": {
         "mensagem_inicial": "Para receber as visitas, vamos precisar de itens de sala, não é mesmo?",
         "coisas": [{
-                "nome": "TV",
+                "nome": "tv",
                 "imagem": "",
                 "palavra-chave": ""
             },
