@@ -3,324 +3,324 @@
         "mensagem_inicial": "Ah, que legal, a gente vai fazer um monte de coisas gostosas para comer, mas para isso precisamos de itens de cozinha, né?! ",
         "coisas": [{
                 "nome": "forno elétrico",
-                "imagem": "img/forno-eletrico.jpg",
-                "palavra-chave": "forno elétrico"
+                "imagem": "",
+                "palavra_chave": "forno elétrico"
             },
             {
                 "nome": "faqueiro",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "pratos rasos",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "micro-ondas",
                 "nome-original": "mo",
-                "imagem": "img/micro-ondas.jpg",
-                "palavra-chave": "micro-ondas brastemp 32 litros"
+                "imagem": "",
+                "palavra_chave": "micro-ondas brastemp 32 litros"
             },
             {
                 "nome": "pratos fundos",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de taças e copos",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "taças de sobremesa",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "assadeiras",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "frigideira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de panelas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "panela de pressão",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "garrafa térmica",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "travessas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "saladeira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jarra",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de café",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "tábua de carne",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "batedeira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cafeteira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "liquidificador",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "torradeira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "espremedor de frutas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "fogão",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "geladeira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "fruteira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "balde de gelo",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "talheres de feijão, macarrão e salada",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "açucareiro",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "kit de potes para tempeiros",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "sanduicheira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "omeleteira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "armários de cozinha",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "multiprocessador",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "conjunto de mesa e cadeiras",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "rolo de massas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "coifa",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "tábua para queijos e frios",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de travessas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jarras",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "refratário",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "bombonieri",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "aparelho de jantar",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "balança para cozinha",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de facas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "moedor de carne",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "máquina de lavar louça",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "mixer de alimentos",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "panela elétrica de arroz",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "fritadeira elétrica",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "aparelho de fondue",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "assadeira redonda",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "leiteira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "chaleira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "panela caçarola",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "forma de cupcake",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "forma de torta",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "forma de pudim",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "forma de suflê",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "baixela",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "conjunto para servir bolo",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "bule",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "escada portátil",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "churrasqueira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "relógio",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
 
         ],
@@ -331,42 +331,42 @@
         "coisas": [{
                 "nome": "tv",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "ventilador",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "rack",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "sofá",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "home theater",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "tapete",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "mesa de centro",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "puff",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
         ],
 
@@ -377,62 +377,62 @@
         "coisas": [{
                 "nome": "abajour",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "climatizador",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cabeceira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cama",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cobertor e manta",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "colcha e cobre leito",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cômoda",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cortina",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "edredom",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de lençol",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "tapete",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "travesseiro",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
 
         ],
@@ -443,42 +443,42 @@
         "coisas": [{
                 "nome": "cesto para roupa suja",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "jogo de toalhas",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "tapete",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "kit de saboneteira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "kit de sanitário",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "chuveiro",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "espelho grande",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "espelho pequeno",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
 
         ],
@@ -489,17 +489,17 @@
         "coisas": [{
                 "nome": "penteadeira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "prateleira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "caixa organizadora",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
         ],
         "mensagem_final": ""
@@ -510,17 +510,17 @@
         "coisas": [{
                 "nome": "escrivaninha",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "cadeira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "prateleira",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
         ],
         "mensagem_final": ""
@@ -530,27 +530,27 @@
         "coisas": [{
                 "nome": "máquina de lavar",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "tábua de passar roupa",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "ferro elétrico",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "aspirador de pó",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             },
             {
                 "nome": "",
                 "imagem": "",
-                "palavra-chave": ""
+                "palavra_chave": ""
             }
         ],
         "mensagem_final": ""

@@ -65,12 +65,15 @@
         <div id="conversa_lista"></div>
 
     </div>
+    <script src="config.js?2"></script>
+    <script src="comum.js?2"></script>
     <script src="item.js?2"></script>
     <script>
-        var url_presentes = "https://cors-anywhere.herokuapp.comhttp://tvc.rf.gd/presentes.php";
+        window.onload = function() {
+            get_conversa_presentes();
+        };
 
     </script>
-    <script src="comum.js?2"></script>
     <script src="whatsapp.js?2"></script>
 
 

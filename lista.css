@@ -54,3 +54,24 @@ section.comodo a {
     height: 16px !important;
     float:left;
 }
+
+
+.loja {
+    display: inline-block;
+    margin: 2em 1em 1em 0 ;
+}
+.loja img {
+    height: 2em !important;
+}
+
+.clicado{
+    text-align: center;
+    background-color: lavender;
+    font-size: .9em;
+    padding: 4px;
+    border-radius: 19px;
+}
+
+.clicado button{
+    margin-left: 1em;
+}
