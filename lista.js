@@ -212,7 +212,7 @@ function mostrar_item(item) {
         div_expandido.appendChild(texto);
 
         texto = document.createElement('p');
-        texto.innerHTML = 'E aí? Você vai comprar pra gente? <img src="img/feliz.png" style="width: 24px; height: 24px"><br><strong style="text-transform: uppercase">' + lista_nova[item]['nome'] + '</strong>';
+        texto.innerHTML = 'E aí? Você vai nos presentear? <img src="img/feliz.png" style="width: 24px; height: 24px"><br><strong style="text-transform: uppercase">' + lista_nova[item]['nome'] + '</strong>';
         div_expandido.appendChild(texto);
 
         var botao_sim = document.createElement('button');
