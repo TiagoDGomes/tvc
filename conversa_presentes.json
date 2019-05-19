@@ -329,7 +329,7 @@
     "sala": {
         "mensagem_inicial": "Para receber as visitas, vamos precisar de itens de sala, não é mesmo?",
         "coisas": [{
-                "nome": "tv",
+                "nome": "televisor",
                 "imagem": "",
                 "palavra_chave": ""
             },

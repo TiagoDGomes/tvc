@@ -2,17 +2,16 @@ var request_dados;
 var request_feedback;
 
 var lista_nova = [];
+var local;
 
 function atualiza_lista_geral() {
     if (request_dados.readyState == 4 && request_feedback.readyState == 4) {
         console.log('atualizando...');
-        console.log(request_feedback.responseText);
         var lista = JSON.parse(request_dados.responseText);
         var feedback = JSON.parse(request_feedback.responseText);
         var url_string = window.location.href;
         var url = new URL(url_string);
-        var local = url.searchParams.get("local");
-        console.log(lista);
+        local = url.searchParams.get("local");
         conversa_lista.innerHTML = '';
 
         var mensagem_inicial = lista[local]['mensagem_inicial'];
@@ -29,8 +28,10 @@ function atualiza_lista_geral() {
             var lista_cliques = [];
 
             for (i = 0; i < lista_velha.length; i++) {
+
                 var feedback_item = feedback[lista_velha[i]['nome']];
                 if (feedback_item != undefined) {
+
                     lista_velha[i]['cliques'] = feedback_item['cliques'];
                     lista_velha[i]['interessados'] = feedback_item['interessados'];
                     if (feedback_item['interessados'] > 0) {
@@ -45,7 +46,14 @@ function atualiza_lista_geral() {
                 } else {
                     console.log('push', lista_velha[i]['nome']);
                     lista_nova.push(lista_velha[i]);
-                }
+                }/**/
+                /*if (lista_velha[i]['cliques'] != undefined) {
+                    lista_cliques.unshift(lista_velha[i]);
+                } else if (lista_velha[i]['interessados'] != undefined) {
+                    lista_interessados.unshift(lista_velha[i]);
+                } else {
+                    lista_nova.push(lista_velha[i]);
+                }*/
             }
             for (i = 0; i < lista_interessados.length; i++) {
                 lista_nova.push(lista_interessados[i]);
@@ -71,18 +79,12 @@ function atualiza_lista_geral() {
                     nome = lista_nova[i]['nome'];
                 }
                 //link.href = "item_escolhido.html?escolha=" + nome;
-                link.href = "javascript:mostrar_item(" + i + ");"
-                console.log(link);
+                link.href = "javascript:mostrar_item(" + i + ");";
                 link.className = 'imagem link_para_abrir';
 
                 var imagem = document.createElement('img');
-                if (lista_nova[i]['imagem'] != '' && lista_nova[i]['imagem'] != undefined) {
-                    imagem.src = lista_nova[i]['imagem'];
-                } else {
-                    imagem.src = 'img/presente.png';
-                    //imagem.style.width = '120px';
-                }
-                imagem.alt = lista_nova[i]['palavra-chave'];
+                imagem.src = 'img/presente.png';
+                imagem.alt = lista_nova[i]['palavra_chave'];
 
                 link.appendChild(imagem);
                 var presente_aberto = document.createElement('img');
@@ -91,7 +93,7 @@ function atualiza_lista_geral() {
                 link_para_fechar.href = "javascript:ocultar_item(" + i + ");"
                 link_para_fechar.style.display = 'none';
                 link_para_fechar.className = 'imagem link_para_fechar';
-                
+
                 link_para_fechar.appendChild(presente_aberto);
 
 
@@ -151,44 +153,47 @@ function atualiza_lista_geral() {
 
 function ocultar_item(item) {
     var presente_container = document.getElementById('presente_' + item);
-    presente_container.getElementsByClassName('clicado')[0].style.display = 'none';        
+    presente_container.getElementsByClassName('clicado')[0].style.display = 'none';
     presente_container.getElementsByClassName('link_para_abrir')[0].style.display = 'inherit';
     presente_container.getElementsByClassName('link_para_fechar')[0].style.display = 'none';
 }
+
 function mostrar_item(item) {
-    var presente_container = document.getElementById('presente_' + item);    
+    var presente_container = document.getElementById('presente_' + item);
     presente_container.getElementsByClassName('link_para_abrir')[0].style.display = 'none';
     presente_container.getElementsByClassName('link_para_fechar')[0].style.display = 'inherit';
     if (presente_container.getElementsByClassName('clicado').length > 0) {
         presente_container.getElementsByClassName('clicado')[0].style.display = 'inherit';
-    } else{
-        
+    } else {
+
         var div_expandido = document.createElement('div');
         div_expandido.className = 'clicado';
 
         var texto = document.createElement('p');
         texto.className = 'texto_lojas';
         var palavra_chave;
-        if (lista_nova[item]['palavra-chave']) {
-            palavra_chave = lista_nova[item]['palavra-chave'];
+        if (lista_nova[item]['palavra_chave']) {
+            palavra_chave = lista_nova[item]['palavra_chave'];
         } else {
             palavra_chave = lista_nova[item]['nome'];
         }
 
-        texto.innerHTML = 'Legal, e para facilitar, estas são alguns sites que vão direto para a busca desse presente:<br>' +
+        texto.innerHTML = 'Legal, e para facilitar, estas são alguns sites que vão direto para a busca desse presente:<br>Não precisa ser nestes sites, mas caso escolha em algum deles, não se esqueça de voltar aqui para nos avisar :).<br>' +
             '<a target="_blank" class="loja" href="https://www.buscape.com.br/search/' + palavra_chave + '"><img src="https://imagebuscape-a.akamaihd.net/material/logo-buscape.svg" alt="Buscapé"></a>' +
             '<a target="_blank" class="loja" href="https://buscas2.casasbahia.com.br/busca?q=' + palavra_chave + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo903294.gif" alt="Casas Bahia"></a>' +
             '<a target="_blank" class="loja" href="https://www.americanas.com.br/busca/?rc=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo81.gif" alt="Americanas"></a>' +
             '<a target="_blank" class="loja" href="https://search3.pontofrio.com.br/busca?q=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo114286.gif" alt="Ponto Frio"></a>' +
             '<a target="_blank" class="loja" href="https://www.carrefour.com.br/busca/?termo=' + palavra_chave + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo1154910.gif" alt="Carrefour"></a>' +
             '<a target="_blank" class="loja" href="https://www.shoptime.com.br/busca/?rc=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo125.gif" alt="Shop Time"></a>' +
+            '<a target="_blank" class="loja" href="https://www.magazineluiza.com.br/busca/' + palavra_chave + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo79.gif" alt="Magazine Luiza"></a>' +
+            '<a target="_blank" class="loja" href="https://www.pernambucanas.com.br/catalogsearch/result/?q=' + palavra_chave.replace(' ', '+') + '"><img src="https://www.pernambucanas.com.br/static/version1557978721/frontend/Innersite/pernambucanas/pt_BR/images/logo_pernambucanas.svg" alt="Pernambucanas"></a>' +
 
-            ' <br> <strong>Não precisa ser nestes sites, mas caso escolha em algum deles, não se esqueça de voltar aqui para nos avisar :)</strong>';
+            ' <br>';
 
         div_expandido.appendChild(texto);
 
         texto = document.createElement('p');
-        texto.innerHTML = 'Você vai comprar pra gente? <img src="img/feliz.png" style="width: 24px; height: 24px"><br><strong style="text-transform: uppercase">' + lista_nova[item]['nome'] + '</strong>';
+        texto.innerHTML = 'E aí? Você vai comprar pra gente? <img src="img/feliz.png" style="width: 24px; height: 24px"><br><strong style="text-transform: uppercase">' + lista_nova[item]['nome'] + '</strong>';
         div_expandido.appendChild(texto);
 
         var botao_sim = document.createElement('button');
@@ -204,7 +209,9 @@ function mostrar_item(item) {
         }
         div_expandido.appendChild(botao_nao)
         presente_container.appendChild(div_expandido);
-        console.log(item);
+        jQuery('#presente_' + item +  ' .clicado a').click(function(){
+            clicado(local, item, this.href);
+        })
     }
 
 }
