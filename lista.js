@@ -6,6 +6,7 @@ var local;
 
 function atualiza_lista_geral() {
     if (request_dados.readyState == 4 && request_feedback.readyState == 4) {
+
         console.log('atualizando...');
         var lista = JSON.parse(request_dados.responseText);
         var feedback = JSON.parse(request_feedback.responseText);
@@ -18,7 +19,8 @@ function atualiza_lista_geral() {
         if (mensagem_inicial != undefined && mensagem_inicial != '') {
             escrever_mensagem(mensagem_inicial);
         }
-        escrever_mensagem('Clique em qualquer um dos presentes para abrir as opções.')
+        escrever_mensagem('Clique em qualquer um dos presentes para abrir as opções. Para voltar para as outras seções da casa, toque no botão voltar ali no topo (ou <a href="javascript:history.go(-1)">aqui</a>).');
+
         lista_nova = [];
         if (lista[local]['coisas'] != undefined && lista[local]['coisas'].length > 0) {
             //var lista_nova = JSON.parse(JSON.stringify(lista[local]['coisas']));
@@ -46,14 +48,7 @@ function atualiza_lista_geral() {
                 } else {
                     console.log('push', lista_velha[i]['nome']);
                     lista_nova.push(lista_velha[i]);
-                } /**/
-                /*if (lista_velha[i]['cliques'] != undefined) {
-                    lista_cliques.unshift(lista_velha[i]);
-                } else if (lista_velha[i]['interessados'] != undefined) {
-                    lista_interessados.unshift(lista_velha[i]);
-                } else {
-                    lista_nova.push(lista_velha[i]);
-                }*/
+                }
             }
             for (i = 0; i < lista_interessados.length; i++) {
                 lista_nova.push(lista_interessados[i]);
@@ -186,7 +181,7 @@ function mostrar_item(item) {
             palavra_chave = lista_nova[item]['nome'];
         }
         var msg;
-        if (lista_nova[item]['interessados'] > 0){
+        if (lista_nova[item]['interessados'] > 0) {
             msg = 'Opa, acho que alguém já escolheu esse, mas se você quiser dar também este presente, tá legal! <br>Para facilitar, estes são alguns sites que vão direto para a busca desse presente.';
         } else {
             msg = 'Legal, e para facilitar, estes são alguns sites que vão direto para a busca desse presente.';
@@ -215,15 +210,7 @@ function mostrar_item(item) {
         var botao_sim = document.createElement('button');
         botao_sim.innerHTML = 'Sim';
         botao_sim.onclick = function () {
-            var c = document.createElement('div');
-            c.innerHTML = '<h4>Oba!</h4><p><span class="texto_hello">Vamos lá! Insira o código que os noivos te entregaram:</span><br><input maxlength="4" class="codigo_convidado" type="text" name="codigo" value="' + getCookie('codigo') +'">';
-            c.innerHTML += '<br>E é só confirmar:';
-            c.innerHTML += '<br><button onclick="interessado(\'\',' + item + ', document.getElementsByClassName(\'codigo_convidado\')[0].value)">Sim, eu vou dar ' + lista_nova[item]['nome'].toUpperCase() + '</button>';
-            c.innerHTML += '<br><button onclick="modal.style.display = \'none\';">Espere, acho que não é isso</button>';
-            
-            
-            wa_show_modal(c);
-            var codigo_convidado = document.getElementsByClassName('codigo_convidado')[0].focus();
+            miolo_modal(item, getCookie('codigo'), false);
         }
         div_expandido.appendChild(botao_sim)
         var botao_nao = document.createElement('button');
@@ -236,46 +223,78 @@ function mostrar_item(item) {
         $('#presente_' + item + ' .clicado a').click(function () {
             clicado(local, item, this.href);
         })
-        
     }
-
-
-
 }
 
-function clicado(secao, item, url){  
-    console.log('Clicado ' + secao + ' ' +  lista_nova[item]['nome'] + ' ' + url);    
-    var url = "https://sbv.ifsp.edu.br/proxy/tvc/clique.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1);    
-    $.ajax({
-        url: url,
-        type: "GET",
-        success: function(data, textStatus, jqXHR){    
+function miolo_modal(item, codigo, do_focus) {
+    console.log('miolomodal', item, codigo);
+    var c = document.createElement('div');
+    if (!codigo) {
+        codigo = getCookie(codigo);
+    }
+    c.innerHTML = '<h4>Oba!</h4><p><span class="texto_hello">Vamos lá! Insira o código que os noivos te entregaram:</span><br><input maxlength="4" class="codigo_convidado" type="text" name="codigo" value="' + codigo + '">';
+    c.innerHTML += '<br>E é só confirmar:';
+    var presente_atual = getCookie('presente');
+    msg_add = '';
+    if (presente_atual) {
+        msg = 'Sim, vou trocar ' + presente_atual.toUpperCase() + ' por ' + lista_nova[item]['nome'].toUpperCase();
+        msg_add = '<br>Caso você queira dar mais de um presente, peça um novo código para os noivos.<br>Eles irão adorar!<br>';
+    } else {
+        msg = 'Sim, eu vou dar ' + lista_nova[item]['nome'].toUpperCase();
+    }
+    c.innerHTML += '<br><button class="interessado_sim" onclick="interessado(\'\',' + item + ', document.getElementsByClassName(\'codigo_convidado\')[0].value)">' + msg + '<br><button onclick="modal.style.display = \'none\';">Espere, acho que não é isso</button>' + msg_add;
+
+
+    wa_show_modal(c);
+    console.log('focus',do_focus)
+    if (do_focus == undefined || do_focus == true){
+        document.getElementsByClassName('codigo_convidado')[0].focus();
+    }
+    
+    $('.codigo_convidado').keyup(function (ev) {
+        $('.texto_hello').removeClass('erro');
+        if (this.value) {
+            if (this.value.length >3) {
+                atualizar_presente(this.value.toUpperCase());
+                v = this.value;
+                setTimeout(function(){ miolo_modal(item, v, false); }, 1300);                
+                $('.interessado_sim').focus();
+            }
         }
-    });     
+
+    });
 }
 
-function interessado(secao, item, codigo){
-    console.log('Clicado ' + secao + ' ' +  lista_nova[item]['nome'] + ' ' + url);    
-    var url = "https://sbv.ifsp.edu.br/proxy/tvc/interessado.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1) + '&codigo=' + codigo.toUpperCase();  
-    setCookie('codigo_digitado', codigo.toUpperCase(), 360);  
+function clicado(secao, item, url) {
+    console.log('Clicado ' + secao + ' ' + lista_nova[item]['nome'] + ' ' + url);
+    var url = "https://sbv.ifsp.edu.br/proxy/tvc/clique.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1);
     $.ajax({
         url: url,
         type: "GET",
-        success: function(data, textStatus, jqXHR){  
-            if (data.erro == 0){
+        success: function (data, textStatus, jqXHR) {}
+    });
+}
+
+function interessado(secao, item, codigo) {
+    console.log('Interessado ' + secao + ' ' + lista_nova[item]['nome'] + ' ' + url);
+    var url = "https://sbv.ifsp.edu.br/proxy/tvc/interessado.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1) + '&codigo=' + codigo.toUpperCase();
+    setCookie('codigo_digitado', codigo.toUpperCase(), 360);
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: function (data, textStatus, jqXHR) {
+            if (data.erro == 0) {
                 setCookie('codigo', getCookie('codigo_digitado'), 360);
                 alert('Muito obrigado. A gente registrou sua ação. Esperamos você no casamento!');
                 window.location = './';
-            }  else {
+            } else {
                 $('.texto_hello').html('Oops! ' + data.msg + ' Digite novamente o código enviado pelos noivos:');
                 $('.texto_hello').addClass('erro');
                 var codigo_convidado = document.getElementsByClassName('codigo_convidado')[0];
                 codigo_convidado.focus();
                 codigo_convidado.setSelectionRange(0, codigo_convidado.value.length);
-                codigo_convidado.onkeydown = (function(ev){
-                    $('.texto_hello').removeClass('erro');
-                });
+
             }
         }
-    });   
+    });
 }

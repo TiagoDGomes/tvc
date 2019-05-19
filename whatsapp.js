@@ -31,7 +31,7 @@ function pipocar_conversa(local_atual, force) {
                 clearInterval(conversa_pipocando);
                 localStorage.setItem(local_atual + '_ja_pipocada', true);
             }
-        }, 1000);
+        }, 700);
     }
 }
 

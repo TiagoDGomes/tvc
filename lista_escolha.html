@@ -71,7 +71,8 @@
     <script src="lista.js?4"></script>
     <script>
         window.onload = function() {
-            get_conversa_presentes();        
+            get_conversa_presentes(); 
+            atualizar_presente();       
             var url_string = window.location.href;
             var url = new URL(url_string);
             if (url.searchParams.get("ir_ao_final")){

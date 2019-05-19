@@ -322,6 +322,12 @@
                 "imagem": "",
                 "palavra_chave": ""
             }
+            ,
+            {
+                "nome": "geladeira",
+                "imagem": "",
+                "palavra_chave": ""
+            }
 
         ],
         "mensagem_final": ""

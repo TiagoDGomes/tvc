@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css?4" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link rel="manifest" href="manifest.webmanifest">
     <style>
@@ -23,8 +24,8 @@
         </header>
 
         <section id="items">
-            <img src="img/w_mario.gif" alt="" class="mario">
-            <img src="img/w_peach.gif" alt="" class="peach">
+            <!--<img src="img/w_mario.gif" alt="" class="mario">
+            <img src="img/w_peach.gif" alt="" class="peach">-->
         </section>
         <section id="welcome">
             <p class="chamada">
@@ -59,17 +60,21 @@
             </p>
         </section>
         <section id="menu">
+            <p class="obrigado"></p>
             <ul class="celular">
                 <li><a href="lista.html">Toque aqui para escolher um presente</a></li>
             </ul>
             <ul class="pc">
                 <li><a href="lista.html">Clique aqui para escolher um presente</a></li>
-            </ul>
-
+            </ul>  
+            <!--<br>
+            <br>          
+            <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLfRx38dumnI0RzhuRf-sXCwID2FXigYjZ&autoplay=1" frameborder="0" allowfullscreen></iframe>-->
         </section>
-        <footer>
-
-        </footer>
+        <section>
+        
+        </section>
+        <footer></footer>
         <div id="role_cortina" class="orientacoes" style="display: none">
             Role a cortina
         </div>
@@ -100,6 +105,7 @@
         </script>
     </div>
 </body>
+<script src="comum.js?4"></script>
 <script>
     if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
@@ -110,5 +116,13 @@
                 console.log("No it didn't. This happened:", err)
             });
     }
+    $.ajax({
+        url: 'https://sbv.ifsp.edu.br/proxy/tvc/presente.php?codigo=' + getCookie('codigo'),
+        success: function(data){
+            if ('nome' in data){
+                $('.obrigado').html('<img src="img/presente_rodando.gif" alt=""><br>Obrigado pelo presente: <br>' + data.nome + '<br><img src="img/yoshi_animado.gif" alt="">');
+            }
+        }
+    })
 </script>
 </html>

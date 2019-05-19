@@ -42,7 +42,7 @@ body{
     */
 }
 a {
-    color: orange;
+    color: red;
     text-decoration: none;
 }
 #menu{
@@ -164,4 +164,10 @@ header{
     .pc{
         display: initial;
     }
+}
+.obrigado:not(:empty){
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid green;
+    padding: 1em;
 }
