@@ -60,12 +60,18 @@ function wa_show_modal(content) {
     if (document.getElementById('wa_modal')) {
         modal = document.getElementById('wa_modal');
         p = document.getElementById('wa_modal_content');
+        p.innerHTML = '';
     } else {
         modal = document.createElement('div');
         modal.id = 'wa_modal';
         modal.className = 'modal';
         var modal_content = document.createElement('div');
         var botao_fechar = document.createElement('span');
+        botao_fechar.innerHTML = '&times;'
+        botao_fechar.className = 'close';
+        botao_fechar.onclick = function(event){
+            modal.style.display = "none";
+        }
         p = document.createElement('div');
         p.id = 'wa_modal_content';
         modal_content.appendChild(botao_fechar);
@@ -76,7 +82,7 @@ function wa_show_modal(content) {
     }
 
     modal.style.display = "block";
-    p.innerHTML = content;
+    p.appendChild(content);
     
 }
 

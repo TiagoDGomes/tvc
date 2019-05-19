@@ -57,7 +57,7 @@ section.comodo a {
 
 .loja {
     display: inline-block;
-    margin: 2em 1em 1em 0 ;
+    margin: .5em 1em 1em 0 ;
 }
 .loja img {
     height: 2em !important;
@@ -71,7 +71,7 @@ section.comodo a {
     border-radius: 19px;
 }
 
-.clicado button{
+.clicado button, .modal button{
     margin-left: 1em;
     border-radius: 31px;
     background-color: white;
@@ -82,4 +82,33 @@ section.comodo a {
     padding: .6em;
     min-width: 6em;
     margin-bottom: 1em;
+}
+.produto.interessado{
+    border: 1px solid greenyellow;
+    border-radius: 15px;
+    padding: 1em; 
+}
+#wa_modal {
+    text-align: center;
+}
+.codigo_convidado{
+    padding: 4px;
+    font-size: 1.4em;
+    width: 4em;
+    text-align: center;
+    border: 1px solid silver;
+    margin-top: .4em;
+    text-transform: uppercase;
+}
+
+.produto{
+    position: relative;
+}
+.olhada{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.olhada img{
+    float: left;
 }

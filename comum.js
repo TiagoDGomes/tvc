@@ -39,20 +39,3 @@ function get_conversa_presentes() {
 }
 
 
-function clicado(secao, item, url){  
-    console.log('Clicado ' + secao + ' ' +  lista_nova[item]['nome'] + ' ' + url);
-    
-    var url = "https://sbv.ifsp.edu.br/proxy/tvc/clique.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1);
-    
-    $.ajax({
-        url: url,
-        type: "GET",
-        success: function(data, textStatus, jqXHR){
-    
-        }
-    });     
-}
-
-function interessado(secao, item, codigo){
-    console.log('interessado ' + secao + ' ' +  lista_nova[item]['nome'] );
-}

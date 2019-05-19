@@ -13,6 +13,7 @@
     min-height: 40px;    
     line-height: 1em;
     max-width: 420px;
+    z-index: 2;
 }
 .conversa {
     background-color: white;
@@ -79,11 +80,11 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    max-width: 475px;
   }
   
   /* The Close Button */
-  .close {
+  #wa_modal .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
