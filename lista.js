@@ -240,7 +240,7 @@ function miolo_modal(item, codigo, do_focus) {
     if (!codigo) {
         codigo = getCookie(codigo);
     }
-    c.innerHTML = '<h4>Oba!</h4><p><span class="texto_hello">Vamos lá! Insira o código que os noivos te entregaram:</span><br><input maxlength="4" class="codigo_convidado" type="text" name="codigo" value="' + codigo + '">';
+    c.innerHTML = '<h4>Oba!</h4><p><span class="texto_hello">Vamos lá! Insira nesta caixinha abaixo o código que os noivos te entregaram:</span><br><input maxlength="4" class="codigo_convidado" type="text" name="codigo" value="' + codigo + '">';
     c.innerHTML += '<br>E é só confirmar:';
     var presente_atual = getCookie('presente');
     msg_add = '';
