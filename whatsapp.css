@@ -78,11 +78,14 @@
   .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 5px 10px 0 5px;
     border: 1px solid #888;
     max-width: 475px;
   }
   
+  #wa_modal{
+    font-size: .8em;
+  }
   /* The Close Button */
   #wa_modal .close {
     color: #aaaaaa;

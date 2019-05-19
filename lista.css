@@ -74,15 +74,18 @@ section.comodo a {
 .clicado button, .modal button{
     margin-left: 1em;
     border-radius: 31px;
-    background-color: white;
-    border: 4px solid aquamarine;
+    border: 3px solid #84eaf9;
     font-family: verdana;
     font-weight: bold;
     cursor: pointer;
     padding: .6em;
     min-width: 6em;
     margin-bottom: 1em;
+    background-image: linear-gradient(to bottom, #eeeeee 0%, #FFFFFF 50%, #cccccc 100%);
 }
+
+.clicado button:hover,  .modal button:hover{ background-position: right center; }
+
 .produto.interessado{
     border: 1px solid greenyellow;
     border-radius: 15px;
@@ -111,4 +114,8 @@ section.comodo a {
 }
 .olhada img{
     float: left;
+}
+#wa_modal_content .erro{
+    color: red;
+    font-weight: bold;
 }

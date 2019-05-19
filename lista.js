@@ -216,7 +216,7 @@ function mostrar_item(item) {
         botao_sim.innerHTML = 'Sim';
         botao_sim.onclick = function () {
             var c = document.createElement('div');
-            c.innerHTML = '<h4>Oba!</h4><p>Vamos lá! Insira o seu código que os noivos te entregaram:<br><input maxlength="4" class="codigo_convidado" type="text" name="codigo">';
+            c.innerHTML = '<h4>Oba!</h4><p><span class="texto_hello">Vamos lá! Insira o código que os noivos te entregaram:</span><br><input maxlength="4" class="codigo_convidado" type="text" name="codigo" value="' + getCookie('codigo') +'">';
             c.innerHTML += '<br>E é só confirmar:';
             c.innerHTML += '<br><button onclick="interessado(\'\',' + item + ', document.getElementsByClassName(\'codigo_convidado\')[0].value)">Sim, eu vou dar ' + lista_nova[item]['nome'].toUpperCase() + '</button>';
             c.innerHTML += '<br><button onclick="modal.style.display = \'none\';">Espere, acho que não é isso</button>';
@@ -233,9 +233,10 @@ function mostrar_item(item) {
         }
         div_expandido.appendChild(botao_nao)
         presente_container.appendChild(div_expandido);
-        jQuery('#presente_' + item + ' .clicado a').click(function () {
+        $('#presente_' + item + ' .clicado a').click(function () {
             clicado(local, item, this.href);
         })
+        
     }
 
 
@@ -255,16 +256,25 @@ function clicado(secao, item, url){
 
 function interessado(secao, item, codigo){
     console.log('Clicado ' + secao + ' ' +  lista_nova[item]['nome'] + ' ' + url);    
-    var url = "https://sbv.ifsp.edu.br/proxy/tvc/interessado.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1) + '&codigo=' + codigo.toUpperCase();    
+    var url = "https://sbv.ifsp.edu.br/proxy/tvc/interessado.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1) + '&codigo=' + codigo.toUpperCase();  
+    setCookie('codigo_digitado', codigo.toUpperCase(), 360);  
     $.ajax({
         url: url,
         type: "GET",
         success: function(data, textStatus, jqXHR){  
             if (data.erro == 0){
-                alert('Muito obrigado. A gente registrou sua ação.');
+                setCookie('codigo', getCookie('codigo_digitado'), 360);
+                alert('Muito obrigado. A gente registrou sua ação. Esperamos você no casamento!');
                 window.location = './';
             }  else {
-                alert(data.msg);
+                $('.texto_hello').html('Oops! ' + data.msg + ' Digite novamente o código enviado pelos noivos:');
+                $('.texto_hello').addClass('erro');
+                var codigo_convidado = document.getElementsByClassName('codigo_convidado')[0];
+                codigo_convidado.focus();
+                codigo_convidado.setSelectionRange(0, codigo_convidado.value.length);
+                codigo_convidado.onkeydown = (function(ev){
+                    $('.texto_hello').removeClass('erro');
+                });
             }
         }
     });   
