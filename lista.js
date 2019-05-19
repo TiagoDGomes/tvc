@@ -194,7 +194,7 @@ function mostrar_item(item) {
         } else {
             msg = 'Legal, e para facilitar, estes são alguns sites que vão direto para a busca desse presente.';
         }
-        texto.innerHTML = msg + '<br>Não precisa ser nestes sites, mas caso escolha em algum deles, não se esqueça de voltar aqui para nos avisar :)<br>' +
+        texto.innerHTML = msg + '<br>O presente não precisa ser destes sites, mas caso seja, não se esqueça de voltar aqui para nos avisar :)<br>' +
             '<a target="_blank" class="loja" href="https://www.buscape.com.br/search/' + palavra_chave + '"><img src="https://imagebuscape-a.akamaihd.net/material/logo-buscape.svg" alt="Buscapé"></a><br>' +
             '<a target="_blank" class="loja" href="https://buscas2.casasbahia.com.br/busca?q=' + palavra_chave + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo903294.gif" alt="Casas Bahia"></a>' +
             '<a target="_blank" class="loja" href="https://www.americanas.com.br/busca/?rc=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo81.gif" alt="Americanas"></a>' +
