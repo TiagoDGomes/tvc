@@ -30,31 +30,39 @@ function atualiza_lista_geral() {
             var lista_cliques = [];
 
             for (i = 0; i < lista_velha.length; i++) {
-
+                console.log('nome', lista_velha[i]['nome']);
                 var feedback_item = feedback[lista_velha[i]['nome']];
                 if (feedback_item != undefined) {
 
+                    console.log('feedback ok', feedback_item);
                     lista_velha[i]['cliques'] = feedback_item['cliques'];
                     lista_velha[i]['interessados'] = feedback_item['interessados'];
                     if (feedback_item['interessados'] > 0) {
+                        console.log('interessados', 'prepare', feedback_item);
                         lista_interessados.unshift(lista_velha[i]);
+                        console.log('lista_interessados atual', lista_interessados);
                     } else {
                         if (feedback_item['cliques'] > 0) {
+                            console.log('cliques', 'prepare', feedback_item);
                             lista_cliques.unshift(lista_velha[i]);
+                            console.log('lista_cliques atual', lista_cliques);
                         } else {
                             lista_nova.push(lista_velha[i]);
+                            console.log('-', 'push', lista_velha[i]['nome']);
                         }
                     }
                 } else {
-                    console.log('push', lista_velha[i]['nome']);
                     lista_nova.push(lista_velha[i]);
+                    console.log('+', 'push', lista_velha[i]['nome']);
                 }
             }
             for (i = 0; i < lista_interessados.length; i++) {
+                console.log('interessados', 'push', lista_interessados[i]['nome']);
                 lista_nova.push(lista_interessados[i]);
             }
 
             for (i = 0; i < lista_cliques.length; i++) {
+                console.log('cliques', 'push', lista_cliques[i]['nome']);
                 lista_nova.unshift(lista_cliques[i]);
             }
 
