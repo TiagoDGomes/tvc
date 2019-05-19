@@ -218,7 +218,7 @@ function mostrar_item(item) {
         var botao_sim = document.createElement('button');
         botao_sim.innerHTML = 'Sim';
         botao_sim.onclick = function () {
-            miolo_modal(item, getCookie('codigo'), false);
+            miolo_modal(item, getCookie('codigo'), true);
         }
         div_expandido.appendChild(botao_sim)
         var botao_nao = document.createElement('button');
@@ -256,7 +256,9 @@ function miolo_modal(item, codigo, do_focus) {
     wa_show_modal(c);
     console.log('focus',do_focus)
     if (do_focus == undefined || do_focus == true){
-        document.getElementsByClassName('codigo_convidado')[0].focus();
+        codigo_convidado = document.getElementsByClassName('codigo_convidado')[0]
+        codigo_convidado.focus();        
+        codigo_convidado.setSelectionRange(0, codigo_convidado.value.length);
     }
     
     $('.codigo_convidado').keyup(function (ev) {
