@@ -19,7 +19,7 @@ function atualiza_lista_geral() {
         if (mensagem_inicial != undefined && mensagem_inicial != '') {
             escrever_mensagem(mensagem_inicial);
         }
-        escrever_mensagem('Clique em qualquer um dos presentes para abrir as opções. Para voltar para as outras seções da casa, toque no botão voltar ali no topo (ou <a href="javascript:history.go(-1)">aqui</a>).');
+        escrever_mensagem('Clique em qualquer um dos presentes para abrir as opções. Para voltar para as outras seções da casa, toque no botão voltar ali no topo (ou <a href="lista.html">aqui</a>).');
 
         lista_nova = [];
         if (lista[local]['coisas'] != undefined && lista[local]['coisas'].length > 0) {
