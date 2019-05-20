@@ -170,6 +170,9 @@ function ocultar_item(item) {
 }
 
 function mostrar_item(item) {
+    $('.clicado').slideUp();
+    $('.link_para_fechar').hide();
+    $('.link_para_abrir').show();
     var presente_container = document.getElementById('presente_' + item);
     presente_container.getElementsByClassName('link_para_abrir')[0].style.display = 'none';
     presente_container.getElementsByClassName('link_para_fechar')[0].style.display = 'inherit';
