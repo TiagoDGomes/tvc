@@ -248,7 +248,7 @@ function miolo_modal(item, codigo, do_focus) {
         msg = 'Sim, vou trocar ' + presente_atual.toUpperCase() + ' por ' + lista_nova[item]['nome'].toUpperCase();
         msg_add = '<br>Caso você queira dar mais de um presente, peça um novo código para os noivos.<br>Eles irão adorar!<br>';
     } else {
-        msg = 'Sim, eu vou dar ' + lista_nova[item]['nome'].toUpperCase();
+        msg = 'Sim, eu vou presentear com ' + lista_nova[item]['nome'].toUpperCase();
     }
     c.innerHTML += '<br><button class="interessado_sim" onclick="interessado(\'\',' + item + ', document.getElementsByClassName(\'codigo_convidado\')[0].value)">' + msg + '<br><button onclick="modal.style.display = \'none\';">Espere, acho que não é isso</button>' + msg_add;
 
