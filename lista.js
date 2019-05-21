@@ -196,9 +196,9 @@ function mostrar_item(item) {
         } else {
             msg = 'Legal, e para facilitar, estes são alguns sites que vão direto para a busca desse presente.';
         }
-        palavra_chave_sem_acentuacao = palavra_chave.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
-        palavra_chave_com_hifen = palavra_chave_sem_acentuacao.replace(' ', '-');
-        palavra_chave_com_adicao = palavra_chave_sem_acentuacao.replace(' ', '+');
+        palavra_chave_sem_acentuacao = palavra_chave.normalize('NFD').replaceAll(/[\u0300-\u036f]/g, "");
+        palavra_chave_com_hifen = palavra_chave_sem_acentuacao.replaceAll(' ', '-');
+        palavra_chave_com_adicao = palavra_chave_sem_acentuacao.replaceAll(' ', '+');
         
                                                                               
         
