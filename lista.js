@@ -200,7 +200,7 @@ function mostrar_item(item) {
         texto.innerHTML = msg + '<br>O presente não precisa ser destes sites, mas caso seja, não se esqueça de voltar aqui para nos avisar :)<br>' +
             '<a target="_blank" class="loja" href="https://www.buscape.com.br/search/' + palavra_chave + '"><img src="https://imagebuscape-a.akamaihd.net/material/logo-buscape.svg" alt="Buscapé"></a><br>' +
             '<a target="_blank" class="loja" href="https://buscas2.casasbahia.com.br/busca?q=' + palavra_chave + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo903294.gif" alt="Casas Bahia"></a>' +
-            '<a target="_blank" class="loja" href="https://www.americanas.com.br/busca/?rc=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo81.gif" alt="Americanas"></a>' +
+            '<a target="_blank" class="loja" href="https://www.americanas.com.br/busca/' + palavra_chave.replace(' ', '-').normalize('NFD').replace(/[\u0300-\u036f]/g, "") + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo81.gif" alt="Americanas"></a>' +
             '<a target="_blank" class="loja" href="https://search3.pontofrio.com.br/busca?q=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo114286.gif" alt="Ponto Frio"></a>' +
             '<a target="_blank" class="loja" href="https://www.carrefour.com.br/busca/?termo=' + palavra_chave + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo1154910.gif" alt="Carrefour"></a>' +
             '<a target="_blank" class="loja" href="https://www.shoptime.com.br/busca/?rc=' + palavra_chave.replace(' ', '-') + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo125.gif" alt="Shop Time"></a>' +
