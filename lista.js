@@ -316,7 +316,7 @@ function interessado(secao, item, codigo) {
             }
         },
         error: function (jqXHR, textStatus, errorThrown){
-            escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?<br>Ah, diz que sim, vai!');
+            alert('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?\nAh, diz que sim, vai!');
         }
     });
 }
