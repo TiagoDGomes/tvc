@@ -5,159 +5,161 @@ var lista_nova = [];
 var local;
 
 function atualiza_lista_geral() {
+    console.log('atualizando...');
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    local = url.searchParams.get("local");
+    conversa_lista.innerHTML = '';
     if (request_dados.readyState == 4 && request_feedback.readyState == 4) {
+        if (request_dados.length == 0) {
+            escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?\nAh, diz que sim, vai!');
+        } else {            
+            var lista = JSON.parse(request_dados.responseText);
+            var feedback = JSON.parse(request_feedback.responseText);
+            var mensagem_inicial = lista[local]['mensagem_inicial'];
+            if (mensagem_inicial != undefined && mensagem_inicial != '') {
+                escrever_mensagem(mensagem_inicial);
+            }
+            escrever_mensagem('Clique em qualquer um dos presentes para abrir as opções. Para voltar para as outras seções da casa, toque no botão voltar ali no topo (ou <a href="lista.html">aqui</a>).');
 
-        console.log('atualizando...');
-        var lista = JSON.parse(request_dados.responseText);
-        var feedback = JSON.parse(request_feedback.responseText);
-        var url_string = window.location.href;
-        var url = new URL(url_string);
-        local = url.searchParams.get("local");
-        conversa_lista.innerHTML = '';
+            lista_nova = [];
+            if (lista[local]['coisas'] != undefined && lista[local]['coisas'].length > 0) {
+                //var lista_nova = JSON.parse(JSON.stringify(lista[local]['coisas']));
+                var lista_velha = lista[local]['coisas'];
 
-        var mensagem_inicial = lista[local]['mensagem_inicial'];
-        if (mensagem_inicial != undefined && mensagem_inicial != '') {
-            escrever_mensagem(mensagem_inicial);
-        }
-        escrever_mensagem('Clique em qualquer um dos presentes para abrir as opções. Para voltar para as outras seções da casa, toque no botão voltar ali no topo (ou <a href="lista.html">aqui</a>).');
+                var lista_interessados = [];
+                var lista_cliques = [];
 
-        lista_nova = [];
-        if (lista[local]['coisas'] != undefined && lista[local]['coisas'].length > 0) {
-            //var lista_nova = JSON.parse(JSON.stringify(lista[local]['coisas']));
-            var lista_velha = lista[local]['coisas'];
+                for (i = 0; i < lista_velha.length; i++) {
+                    console.log('nome', lista_velha[i]['nome']);
+                    var feedback_item = feedback[lista_velha[i]['nome']];
+                    if (feedback_item != undefined) {
 
-            var lista_interessados = [];
-            var lista_cliques = [];
-
-            for (i = 0; i < lista_velha.length; i++) {
-                console.log('nome', lista_velha[i]['nome']);
-                var feedback_item = feedback[lista_velha[i]['nome']];
-                if (feedback_item != undefined) {
-
-                    console.log('feedback ok', feedback_item);
-                    lista_velha[i]['cliques'] = feedback_item['cliques'];
-                    lista_velha[i]['interessados'] = feedback_item['interessados'];
-                    if (feedback_item['interessados'] > 0) {
-                        console.log('interessados', 'prepare', feedback_item);
-                        lista_interessados.unshift(lista_velha[i]);
-                        console.log('lista_interessados atual', lista_interessados);
-                    } else {
-                        if (feedback_item['cliques'] > 0) {
-                            console.log('cliques', 'prepare', feedback_item);
-                            lista_cliques.unshift(lista_velha[i]);
-                            console.log('lista_cliques atual', lista_cliques);
+                        console.log('feedback ok', feedback_item);
+                        lista_velha[i]['cliques'] = feedback_item['cliques'];
+                        lista_velha[i]['interessados'] = feedback_item['interessados'];
+                        if (feedback_item['interessados'] > 0) {
+                            console.log('interessados', 'prepare', feedback_item);
+                            lista_interessados.unshift(lista_velha[i]);
+                            console.log('lista_interessados atual', lista_interessados);
                         } else {
-                            lista_nova.push(lista_velha[i]);
-                            console.log('-', 'push', lista_velha[i]['nome']);
+                            if (feedback_item['cliques'] > 0) {
+                                console.log('cliques', 'prepare', feedback_item);
+                                lista_cliques.unshift(lista_velha[i]);
+                                console.log('lista_cliques atual', lista_cliques);
+                            } else {
+                                lista_nova.push(lista_velha[i]);
+                                console.log('-', 'push', lista_velha[i]['nome']);
+                            }
                         }
-                    }
-                } else {
-                    lista_nova.push(lista_velha[i]);
-                    console.log('+', 'push', lista_velha[i]['nome']);
-                }
-            }
-            for (i = 0; i < lista_interessados.length; i++) {
-                console.log('interessados', 'push', lista_interessados[i]['nome']);
-                lista_nova.push(lista_interessados[i]);
-            }
-
-            for (i = 0; i < lista_cliques.length; i++) {
-                console.log('cliques', 'push', lista_cliques[i]['nome']);
-                lista_nova.unshift(lista_cliques[i]);
-            }
-
-            //var lista_nova = lista[local]['coisas'];
-            for (i = 0; i < lista_nova.length; i++) {
-                var container = document.createElement('div');
-                container.className = 'produto';
-                container.id = 'presente_' + i;
-                var titulo = document.createElement('h2');
-                titulo.innerHTML = lista_nova[i]['nome'];
-                container.appendChild(titulo);
-                var link = document.createElement('a');
-                var nome;
-                if (lista_nova[i]['nome-original']) {
-                    nome = lista_nova[i]['nome-original'];
-                } else {
-                    nome = lista_nova[i]['nome'];
-                }
-                //link.href = "item_escolhido.html?escolha=" + nome;
-                link.href = "javascript:mostrar_item(" + i + ");";
-                link.className = 'imagem link_para_abrir';
-
-                var imagem = document.createElement('img');
-                imagem.src = 'img/presente.png';
-                imagem.alt = lista_nova[i]['palavra_chave'];
-
-                link.appendChild(imagem);
-                var presente_aberto = document.createElement('img');
-                presente_aberto.src = 'img/presente_aberto.png';
-                var link_para_fechar = document.createElement('a');
-                link_para_fechar.href = "javascript:ocultar_item(" + i + ");"
-                link_para_fechar.style.display = 'none';
-                link_para_fechar.className = 'imagem link_para_fechar';
-
-                link_para_fechar.appendChild(presente_aberto);
-
-
-                var feedback = document.createElement('p');
-
-                feedback.className = 'feedback';
-
-                if (lista_nova[i]['cliques'] > 0 && !lista_nova[i]['interessados']) {
-                    var cc = document.createElement('div');
-                    cc.className = 'olhada';
-                    var olho = document.createElement('img');
-                    cc.appendChild(olho);
-                    if (lista_nova[i]['cliques'] > 0) {
-                        olho.src = 'img/eyeglasses.png';
-                        txt = document.createTextNode(lista_nova[i]['cliques']);
                     } else {
-                        olho.src = 'img/eyeglasses.png';
-                        txt = document.createTextNode('Nenhuma pessoa foi ver este presente nas lojas');
+                        lista_nova.push(lista_velha[i]);
+                        console.log('+', 'push', lista_velha[i]['nome']);
                     }
-                    cc.appendChild(txt)
-                    feedback.appendChild(cc);
-
-                    var br = document.createElement('br');
-                    feedback.appendChild(br);
                 }
-                var joinha = document.createElement('img');
-                joinha.src = 'img/joinha.png';
-                feedback.appendChild(joinha);
-                if (lista_nova[i]['interessados'] > 0) {
-                    txt_ = document.createTextNode('Pessoas que se interessaram em dar esse presente: ' + lista_nova[i]['interessados'] + '');
-                    txt = document.createElement('strong');
-                    txt.appendChild(txt_);
-                    imagem.src = 'img/presente_rodando.gif';
-                    container.className += ' interessado';
-                    imagem_yoshi = document.createElement('img');
-                    imagem_yoshi.src = "img/yoshi_animado.gif";
-                    link.appendChild(imagem_yoshi);
-                    joinha.src = 'img/shopping_cart_full.png';
-                } else {
-                    txt = document.createTextNode('Ninguém ainda se interessou em dar este presente. Que tal você?');
+                for (i = 0; i < lista_interessados.length; i++) {
+                    console.log('interessados', 'push', lista_interessados[i]['nome']);
+                    lista_nova.push(lista_interessados[i]);
                 }
-                feedback.appendChild(txt);
-                container.appendChild(feedback);
-                container.appendChild(link);
-                container.appendChild(link_para_fechar);
-                escrever_mensagem_complexa(container);
 
+                for (i = 0; i < lista_cliques.length; i++) {
+                    console.log('cliques', 'push', lista_cliques[i]['nome']);
+                    lista_nova.unshift(lista_cliques[i]);
+                }
+
+                //var lista_nova = lista[local]['coisas'];
+                for (i = 0; i < lista_nova.length; i++) {
+                    var container = document.createElement('div');
+                    container.className = 'produto';
+                    container.id = 'presente_' + i;
+                    var titulo = document.createElement('h2');
+                    titulo.innerHTML = lista_nova[i]['nome'];
+                    container.appendChild(titulo);
+                    var link = document.createElement('a');
+                    var nome;
+                    if (lista_nova[i]['nome-original']) {
+                        nome = lista_nova[i]['nome-original'];
+                    } else {
+                        nome = lista_nova[i]['nome'];
+                    }
+                    //link.href = "item_escolhido.html?escolha=" + nome;
+                    link.href = "javascript:mostrar_item(" + i + ");";
+                    link.className = 'imagem link_para_abrir';
+
+                    var imagem = document.createElement('img');
+                    imagem.src = 'img/presente.png';
+                    imagem.alt = lista_nova[i]['palavra_chave'];
+
+                    link.appendChild(imagem);
+                    var presente_aberto = document.createElement('img');
+                    presente_aberto.src = 'img/presente_aberto.png';
+                    var link_para_fechar = document.createElement('a');
+                    link_para_fechar.href = "javascript:ocultar_item(" + i + ");"
+                    link_para_fechar.style.display = 'none';
+                    link_para_fechar.className = 'imagem link_para_fechar';
+
+                    link_para_fechar.appendChild(presente_aberto);
+
+
+                    var feedback = document.createElement('p');
+
+                    feedback.className = 'feedback';
+
+                    if (lista_nova[i]['cliques'] > 0 && !lista_nova[i]['interessados']) {
+                        var cc = document.createElement('div');
+                        cc.className = 'olhada';
+                        var olho = document.createElement('img');
+                        cc.appendChild(olho);
+                        if (lista_nova[i]['cliques'] > 0) {
+                            olho.src = 'img/eyeglasses.png';
+                            txt = document.createTextNode(lista_nova[i]['cliques']);
+                        } else {
+                            olho.src = 'img/eyeglasses.png';
+                            txt = document.createTextNode('Nenhuma pessoa foi ver este presente nas lojas');
+                        }
+                        cc.appendChild(txt)
+                        feedback.appendChild(cc);
+
+                        var br = document.createElement('br');
+                        feedback.appendChild(br);
+                    }
+                    var joinha = document.createElement('img');
+                    joinha.src = 'img/joinha.png';
+                    feedback.appendChild(joinha);
+                    if (lista_nova[i]['interessados'] > 0) {
+                        txt_ = document.createTextNode('Pessoas que se interessaram em dar esse presente: ' + lista_nova[i]['interessados'] + '');
+                        txt = document.createElement('strong');
+                        txt.appendChild(txt_);
+                        imagem.src = 'img/presente_rodando.gif';
+                        container.className += ' interessado';
+                        imagem_yoshi = document.createElement('img');
+                        imagem_yoshi.src = "img/yoshi_animado.gif";
+                        link.appendChild(imagem_yoshi);
+                        joinha.src = 'img/shopping_cart_full.png';
+                    } else {
+                        txt = document.createTextNode('Ninguém ainda se interessou em dar este presente. Que tal você?');
+                    }
+                    feedback.appendChild(txt);
+                    container.appendChild(feedback);
+                    container.appendChild(link);
+                    container.appendChild(link_para_fechar);
+                    escrever_mensagem_complexa(container);
+
+                }
+            } else {
+                escrever_mensagem('???');
+                escrever_mensagem('Acho que esqueci de algo...');
+                escrever_mensagem('Ah, lembrei');
+                escrever_mensagem('Não preparei a lista... sou muito burro');
             }
-        } else {
-            escrever_mensagem('???');
-            escrever_mensagem('Acho que esqueci de algo...');
-            escrever_mensagem('Ah, lembrei');
-            escrever_mensagem('Não preparei a lista... sou muito burro');
-        }
 
-        var mensagem_final = lista[local]['mensagem_final'];
-        if (mensagem_final != undefined && mensagem_final != '') {
-            escrever_mensagem(mensagem_final);
+            var mensagem_final = lista[local]['mensagem_final'];
+            if (mensagem_final != undefined && mensagem_final != '') {
+                escrever_mensagem(mensagem_final);
+            }
         }
-
         pipocar_conversa(local);
+
     }
 }
 
@@ -199,9 +201,9 @@ function mostrar_item(item) {
         palavra_chave_sem_acentuacao = palavra_chave.normalize('NFD').replaceAll(/[\u0300-\u036f]/g, "");
         palavra_chave_com_hifen = palavra_chave_sem_acentuacao.replaceAll(' ', '-');
         palavra_chave_com_adicao = palavra_chave_sem_acentuacao.replaceAll(' ', '+');
-        
-                                                                              
-        
+
+
+
         texto.innerHTML = msg + '<br>O presente não precisa ser destes sites, mas caso seja, não se esqueça de voltar aqui para nos avisar :)<br>' +
             '<a target="_blank" class="loja" href="https://www.buscape.com.br/search/' + palavra_chave + '"><img src="https://imagebuscape-a.akamaihd.net/material/logo-buscape.svg" alt="Buscapé"></a><br>' +
             '<a target="_blank" class="loja" href="https://buscas2.casasbahia.com.br/busca?q=' + palavra_chave_sem_acentuacao + '"><img src="https://imagembuscapebr-a.akamaihd.net/vitrine/logo903294.gif" alt="Casas Bahia"></a>' +
@@ -262,20 +264,22 @@ function miolo_modal(item, codigo, do_focus) {
 
 
     wa_show_modal(c);
-    console.log('focus',do_focus)
-    if (do_focus == undefined || do_focus == true){
+    console.log('focus', do_focus)
+    if (do_focus == undefined || do_focus == true) {
         codigo_convidado = document.getElementsByClassName('codigo_convidado')[0]
-        codigo_convidado.focus();        
+        codigo_convidado.focus();
         codigo_convidado.setSelectionRange(0, codigo_convidado.value.length);
     }
-    
+
     $('.codigo_convidado').keyup(function (ev) {
         $('.texto_hello').removeClass('erro');
         if (this.value) {
-            if (this.value.length >3) {
+            if (this.value.length > 3) {
                 atualizar_presente(this.value.toUpperCase());
                 v = this.value;
-                setTimeout(function(){ miolo_modal(item, v, false); }, 1300);                
+                setTimeout(function () {
+                    miolo_modal(item, v, false);
+                }, 1300);
                 $('.interessado_sim').focus();
             }
         }
@@ -314,9 +318,6 @@ function interessado(secao, item, codigo) {
                 codigo_convidado.setSelectionRange(0, codigo_convidado.value.length);
 
             }
-        },
-        error: function (jqXHR, textStatus, errorThrown){
-            alert('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?\nAh, diz que sim, vai!');
         }
     });
 }
