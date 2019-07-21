@@ -313,6 +313,9 @@ function interessado(secao, item, codigo) {
                 codigo_convidado.setSelectionRange(0, codigo_convidado.value.length);
 
             }
+        },
+        error: function (){
+            escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?<br>Ah, diz que sim, vai!');
         }
     });
 }
