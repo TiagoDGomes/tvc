@@ -295,11 +295,12 @@ function clicado(secao, item, url) {
 
 function interessado(secao, item, codigo) {
     console.log('Interessado ' + secao + ' ' + lista_nova[item]['nome'] + ' ' + url);
-    var url = "https://sbv.ifsp.edu.br/proxy/tvc/interessado.php?nome=" + lista_nova[item]['nome'] + "&__=" + Math.floor((Math.random() * 100000) + 1) + '&codigo=' + codigo.toUpperCase();
+    var url = "https://sbv.ifsp.edu.br/proxy/tvc/interessado.php?nome=" + lista_nova[item]['nome'] + '&codigo=' + codigo.toUpperCase();
     setCookie('codigo_digitado', codigo.toUpperCase(), 360);
     $.ajax({
         url: url,
         type: "GET",
+        cache: false,
         success: function (data, textStatus, jqXHR) {
             if (data.erro == 0) {
                 setCookie('codigo', getCookie('codigo_digitado'), 360);
@@ -314,7 +315,7 @@ function interessado(secao, item, codigo) {
 
             }
         },
-        error: function (){
+        error: function (jqXHR, textStatus, errorThrown){
             escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?<br>Ah, diz que sim, vai!');
         }
     });
