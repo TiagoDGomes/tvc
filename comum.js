@@ -24,6 +24,7 @@ function busca_feedback() {
     request_feedback = createRequest();
     var url = "https://sbv.ifsp.edu.br/proxy/tvc/feedback.php?__=" + Math.floor((Math.random() * 100000) + 1);
     request_feedback.open("GET", url, true);
+    request_feedback.timeout = 2000;
     request_feedback.onreadystatechange = atualiza_lista_geral;
     request_feedback.send(null);
 }
@@ -33,6 +34,7 @@ function get_conversa_presentes() {
     request_dados = createRequest();
     var url = "conversa_presentes.json?__=" + Math.floor((Math.random() * 100000) + 1);
     request_dados.open("GET", url, true);
+    request_dados.timeout = 2000;
     request_dados.onreadystatechange = busca_feedback;
     request_dados.send(null);
 }
