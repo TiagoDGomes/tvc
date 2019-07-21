@@ -11,7 +11,7 @@ function atualiza_lista_geral() {
     local = url.searchParams.get("local");
     conversa_lista.innerHTML = '';
     if (request_dados.readyState == 4 && request_feedback.readyState == 4) {
-        if (request_dados.responseText.length == 0) {
+        if (request_feedback.responseText.length == 0) {
             escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?\nAh, diz que sim, vai!');
         } else {            
             var lista = JSON.parse(request_dados.responseText);
