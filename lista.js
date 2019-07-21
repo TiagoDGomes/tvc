@@ -12,7 +12,10 @@ function atualiza_lista_geral() {
     conversa_lista.innerHTML = '';
     if (request_dados.readyState == 4 && request_feedback.readyState == 4) {
         if (request_feedback.responseText.length == 0) {
-            escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?\nAh, diz que sim, vai!');
+            escrever_mensagem('<img src="https://2.bp.blogspot.com/-rBQt0DXBXlQ/T_CwpxFy7kI/AAAAAAAABYs/MA5xZ3KI49o/s1600/DrMarioExamination.png" style="width:100%">')
+            escrever_mensagem('Deu algum problema ao carregar a lista de presentes. Você pode voltar mais tarde?');
+            escrever_mensagem('Ah, diz que sim, vai!')
+
         } else {            
             var lista = JSON.parse(request_dados.responseText);
             var feedback = JSON.parse(request_feedback.responseText);
