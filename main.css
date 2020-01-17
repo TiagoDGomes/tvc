@@ -53,6 +53,9 @@ a {
 #menu ul{
     list-style-type: none;
 }
+#menu li{
+    padding-top: 1em;
+}
 .nome{
     font-family: 'Rouge Script', cursive;
     text-transform: initial !important;
@@ -170,4 +173,7 @@ header{
     border-radius: 10px;
     border: 1px solid green;
     padding: 1em;
+}
+.obrigado{
+    margin-top: 1em;
 }

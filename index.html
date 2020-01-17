@@ -8,18 +8,20 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css?10" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?11" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <link rel="manifest" href="manifest.webmanifest">
     <style>
-
+        .antes-casamento {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="main">
-        <header>
+        <header class="antes-casamento">
 
         </header>
 
@@ -27,7 +29,7 @@
             <img src="img/w_mario.gif" alt="" class="mario">
             <img src="img/w_peach.gif" alt="" class="peach">
         </section>
-        <section id="welcome">
+        <section class="antes-casamento" id="welcome">
             <p class="chamada">
                 <span class="mensagem">Os produtores</span>
                 <span class="pais noivo">
@@ -60,24 +62,52 @@
             </p>
         </section>
         <section id="menu">
-            <p class="obrigado"></p>
-            <ul class="celular">
-                <li><a href="lista.html">Toque aqui para escolher um presente</a></li>
-                <li><a target="_blank" href="https://photos.google.com/share/AF1QipO53bjfKFRrG97Hew8I6-5cD8TAyQUkLWG3TRrP1f7_-guXWRiMYtgiMw2gzgBhQg?key=NGgyZWNuOW9TMk1ZWXI2TUpfVDQxOU43cS1DTld3">Toque aqui para ver a sessão de fotos<br>(Pré-wedding)</a></li>               
-            </ul> 
+            <p class="obrigado">Agradecemos a todos que participaram deste momento tão especial para nós
 
-            <ul class="pc">
-                <li><a href="lista.html">Clique aqui para escolher um presente</a></li>
-                <li><a target="_blank" href="https://photos.google.com/share/AF1QipO53bjfKFRrG97Hew8I6-5cD8TAyQUkLWG3TRrP1f7_-guXWRiMYtgiMw2gzgBhQg?key=NGgyZWNuOW9TMk1ZWXI2TUpfVDQxOU43cS1DTld3">Clique aqui para ver a sessão de fotos<br>(Pré-wedding)</a></li>
-            </ul> 
-            
-             
-            <!--<br>
-            <br>          
-            <iframe width="720" height="405" src="https://www.youtube.com/embed/?listType=playlist&list=PLfRx38dumnI0RzhuRf-sXCwID2FXigYjZ&autoplay=1" frameborder="0" allowfullscreen></iframe>-->
+
+            </p>
+            <p>
+                <a href="https://photos.google.com/share/AF1QipPldvRcByQv--jDd_-_zK9rgOwrnTU0gYj2YQ2V9XFLUEU52e1lgJ7CeD034ubyTg?hl=pt-BR&key=dC04S2dZR2hLNjVjOUFnMVN6X2ZfUmhncm81S2NR"
+                    target="_blank">
+                    <img src="https://lh3.googleusercontent.com/YP7D5DOsK8cvtQoeqP7wInABC1QW9wjKRtc_j85_ZOjBQ-RUbktbCtqXHDWUrimXOlw5mVWIUejpC970GKbw0VASPX_JJCLIlbiKs4VolZ34TL-Zxorh5__DntsGZhkV8-ASKMaYcJ6SvBYggT9fyX-JaUzJlq-rQglzM6xA7DFnpdEk0SpbQVyQrg_p1yL_-T03Iy8flnX2kS8HxMiXjOU8wQHsq5af25oCYxogWue9pgYWLtMiwB6UH8kXOYpzIgT9Img-yfqdYVWor6lAYrXPh6n3Wk3-NbCERd_r0TqjWWvNmXrpeewwySgqcpe0EY5-o9JDFjD1CAqZ17Nu2os79-ZDIIIUUa6ZH95JSgJIeZSWzT3BN-C56OeYUtFlql8YtrOFi9QnYuV9PMvDd98ygkaULb_aYZ7BReVfiVQKwXQST3opZFMyr_ch4lzR3H8UBFZNM_iqHefqPuv7yNb-jFPtRD0oYBOnWWTgc33icSK349kGQ-YcjMrsW3FO5dj9mjKb4M_M7tgI6TlsetHEP0T6yaRQQFSE9lM5RoUDU1U45o0cv3epce-BdHn9SIklJO2eWZyy6iTpZIIcZqV3D_rfx7dDgrfkHrkpTwAQmu_BgP0_aviJaCxmvEvNHFvaMLfYxSbC-s4kwW3y8nuCGDI3FmYiUgbIZ5h31fAnqX0j3gv-DlcWK4luyz_XTdeJYzLPFgLAsi32xX9nKP3wtaTa6Jdukv5Zt8p_LULdalqA=w1453-h969-no"
+                        style="width: 100%" alt="">
+                </a>
+            </p>
+            <ul>
+                <li class="antes-casamento">
+                    <a href="lista.html">
+                        <span class="pc">Clique <span class="celular">Toque </span>aqui para escolher um presente
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="https://photos.google.com/share/AF1QipO53bjfKFRrG97Hew8I6-5cD8TAyQUkLWG3TRrP1f7_-guXWRiMYtgiMw2gzgBhQg?key=NGgyZWNuOW9TMk1ZWXI2TUpfVDQxOU43cS1DTld3">
+                        <span class="pc">Clique <span class="celular">Toque </span> aqui para ver a sessão de
+                            fotos<br>(Pré-wedding)
+                    </a>
+                </li>
+
+                <li>
+                    <a target="_blank"
+                        href="https://photos.google.com/share/AF1QipPldvRcByQv--jDd_-_zK9rgOwrnTU0gYj2YQ2V9XFLUEU52e1lgJ7CeD034ubyTg?hl=pt-BR&key=dC04S2dZR2hLNjVjOUFnMVN6X2ZfUmhncm81S2NR">
+                        <span class="pc">Clique <span class="celular">Toque </span> aqui para ver as fotos do casamento
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/playlist?list=PLfRx38dumnI0RzhuRf-sXCwID2FXigYjZ">
+                        <span class="pc">Clique <span class="celular">Toque </span> aqui para ouvir a lista musical da
+                            festa
+                    </a>
+                </li>
+            </ul>
+
+
+
+
+
         </section>
         <section>
-        
+
         </section>
         <footer></footer>
         <div id="role_cortina" class="orientacoes" style="display: none">
@@ -90,8 +120,9 @@
             //    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
             //}
             window.addEventListener('scroll', function (e) {
-                console.log(window.scrollX, window.scrollY, document.body.scrollHeight, document.body.scrollWidth);
-                if (window.scrollY  > 700){
+                console.log(window.scrollX, window.scrollY, document.body.scrollHeight, document.body
+                    .scrollWidth);
+                if (window.scrollY > 700) {
                     role_cortina.style.display = 'none';
                 }
                 //var b = amap(window.scrollY, 0, document.body.scrollHeight, 0, 255);
@@ -123,11 +154,14 @@
     }
     $.ajax({
         url: 'https://sbv.ifsp.edu.br/proxy/tvc/presente.php?codigo=' + getCookie('codigo'),
-        success: function(data){
-            if ('nome' in data){
-                $('.obrigado').html('<img src="img/presente_rodando.gif" alt=""><br>Obrigado pelo presente: <br>' + data.nome + '<br><img src="img/yoshi_animado.gif" alt="">');
+        success: function (data) {
+            if ('nome' in data) {
+                $('.obrigado').html(
+                    '<img src="img/presente_rodando.gif" alt=""><br>Obrigado pelo presente: <br>' + data
+                    .nome + '<br><img src="img/yoshi_animado.gif" alt="">');
             }
         }
     })
 </script>
+
 </html>
